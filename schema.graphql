@@ -1,4 +1,4 @@
-type StockingStats @entity {
+type StockingStat @entity {
   id: ID!
   stockingCount: BigInt!
 }

@@ -11,7 +11,7 @@ import {
   BigDecimal
 } from "@graphprotocol/graph-ts";
 
-export class StockingStats extends Entity {
+export class StockingStat extends Entity {
   constructor(id: string) {
     super();
     this.set("id", Value.fromString(id));
@@ -19,18 +19,18 @@ export class StockingStats extends Entity {
 
   save(): void {
     let id = this.get("id");
-    assert(id != null, "Cannot save StockingStats entity without an ID");
+    assert(id != null, "Cannot save StockingStat entity without an ID");
     if (id) {
       assert(
         id.kind == ValueKind.STRING,
-        `Entities of type StockingStats must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
+        `Entities of type StockingStat must have an ID of type String but the id '${id.displayData()}' is of type ${id.displayKind()}`
       );
-      store.set("StockingStats", id.toString(), this);
+      store.set("StockingStat", id.toString(), this);
     }
   }
 
-  static load(id: string): StockingStats | null {
-    return changetype<StockingStats | null>(store.get("StockingStats", id));
+  static load(id: string): StockingStat | null {
+    return changetype<StockingStat | null>(store.get("StockingStat", id));
   }
 
   get id(): string {
