@@ -1,0 +1,16 @@
+{
+  "name": "SneakerHeads-Stocking",
+  "license": "UNLICENSED",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --product hosted-service fabiencoutant/sneakers-heads",
+    "create-local": "graph create --node http://localhost:8020/ sneakers-heads",
+    "remove-local": "graph remove --node http://localhost:8020/ sneakers-heads",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 sneakers-heads"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.31.0",
+    "@graphprotocol/graph-ts": "0.27.0"
+  }
+}
