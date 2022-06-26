@@ -1,5 +1,5 @@
 {
-  "name": "SneakerHeads-Stocking",
+  "name": "SneakerHeads-subgraph",
   "license": "UNLICENSED",
   "scripts": {
     "codegen": "graph codegen",

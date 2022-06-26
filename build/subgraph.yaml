@@ -1,0 +1,26 @@
+specVersion: 0.0.4
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum
+    name: SneakerHeads
+    network: mainnet
+    source:
+      address: "0x8dC7b6EC6FafA36085EE9ec8e39112428D3360aa"
+      abi: SneakerHeads
+      startBlock: 14978498
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - StockingStats
+      abis:
+        - name: SneakerHeads
+          file: SneakerHeads/abis/SneakerHeads.json
+      eventHandlers:
+        - event: Stocked(indexed uint256)
+          handler: handleStocked
+        - event: UnStocked(indexed uint256)
+          handler: handleUnStocked
+      file: SneakerHeads/SneakerHeads.wasm
