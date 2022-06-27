@@ -23,4 +23,4 @@ dataSources:
           handler: handleStocked
         - event: UnStocked(indexed uint256)
           handler: handleUnStocked
-      file: ./src/stocking.ts
+      file: ./src/stocked.ts
